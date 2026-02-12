@@ -16,7 +16,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Background */
+/* Background Glow */
 body::before{
     content:"";
     position:fixed;
@@ -27,11 +27,11 @@ body::before{
     z-index:-1;
 }
 
-/* Section Titles */
+/* SECTION TITLE */
 .section-title{
     text-align:center;
     font-size:2.5rem;
-    margin-bottom:50px;
+    margin-bottom:60px;
     color:#ff2f8b;
 }
 
@@ -50,9 +50,7 @@ body::before{
     width:100%;
     max-width:1200px;
 }
-.hero-left{
-    flex:1;
-}
+.hero-left{flex:1;}
 .badge{
     background:#19e7c6;
     color:#000;
@@ -70,10 +68,7 @@ body::before{
     color:#19e7c6;
     margin-bottom:20px;
 }
-.hero-left p{
-    margin:8px 0;
-    color:#ccc;
-}
+.hero-left p{margin:6px 0;color:#ccc;}
 .hero-right{
     flex:1;
     display:flex;
@@ -93,23 +88,68 @@ body::before{
     object-fit:cover;
 }
 
-/* PROJECT SECTION */
+/* ABOUT SECTION (NEW UNIQUE LAYOUT) */
+.about{
+    padding:120px 10%;
+}
+.about-container{
+    max-width:1200px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:60px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:60px;
+}
+.about-text h3{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#19e7c6;
+}
+.about-text p{
+    line-height:1.8;
+    color:#ccc;
+    margin-bottom:15px;
+}
+
+/* SKILLS GRID (Different From Reference) */
+.skills{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.skill-box{
+    background:#111827;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+.skill-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(25,231,198,0.4);
+    border-color:#19e7c6;
+}
+
+/* PROJECTS */
 .project{
-    padding:100px 10%;
+    padding:120px 10%;
 }
 .project-container{
     display:flex;
     gap:50px;
     align-items:center;
-    margin-bottom:80px;
+    margin-bottom:100px;
 }
 .project-container img{
     width:400px;
     border-radius:15px;
 }
-.project-text{
-    flex:1;
-}
+.project-text{flex:1;}
 .project-text h3{
     font-size:1.8rem;
     margin-bottom:20px;
@@ -129,40 +169,16 @@ body::before{
     text-decoration:none;
 }
 
-/* SKILL BARS */
-.skill{
-    margin:15px 0;
-}
-.skill span{
-    display:flex;
-    justify-content:space-between;
-}
-.skill-bar{
-    height:8px;
-    background:#222;
-    border-radius:10px;
-    margin-top:5px;
-    overflow:hidden;
-}
-.skill-bar div{
-    height:100%;
-    background:linear-gradient(90deg,#19e7c6,#ff2f8b);
-}
-
 /* CONTACT */
 .contact{
-    padding:100px 10%;
+    padding:120px 10%;
 }
 .contact-container{
     display:flex;
     gap:50px;
 }
-.contact-left{
-    flex:1;
-}
-.contact-left p{
-    margin:15px 0;
-}
+.contact-left{flex:1;}
+.contact-left p{margin:15px 0;color:#ccc;}
 .contact-right{
     flex:1;
     background:#1a1a2e;
@@ -177,21 +193,19 @@ body::before{
     border:none;
     border-radius:8px;
 }
-.contact-right button{
-    margin-top:15px;
-}
+.contact-right button{margin-top:15px;}
 
-/* Responsive */
+/* RESPONSIVE */
 @media(max-width:900px){
     .hero-content,
     .project-container,
-    .contact-container{
+    .contact-container,
+    .about-container{
         flex-direction:column;
+        display:flex;
         text-align:center;
     }
-    .project-container img{
-        width:100%;
-    }
+    .project-container img{width:100%;}
 }
 </style>
 </head>
@@ -209,7 +223,6 @@ body::before{
 <p>📱 +92 3XX XXXXXXX</p>
 <p>📍 Pakistan</p>
 </div>
-
 <div class="hero-right">
 <div class="profile-img">
 <img src="profile.jpg">
@@ -218,7 +231,36 @@ body::before{
 </div>
 </section>
 
-<!-- PROJECT 1 -->
+<!-- ABOUT + SKILLS -->
+<section class="about">
+<h2 class="section-title">About & Skills</h2>
+<div class="about-container">
+<div class="about-text">
+<h3>About Me</h3>
+<p>
+I’m a passionate Unity developer building immersive mobile games.
+I focus on performance optimization, monetization systems, and scalable gameplay architecture.
+</p>
+<p>
+From hyper-casual games to multiplayer systems, I create polished
+experiences designed for retention and growth.
+</p>
+</div>
+
+<div class="skills">
+<div class="skill-box">Unity</div>
+<div class="skill-box">C#</div>
+<div class="skill-box">Game Design</div>
+<div class="skill-box">Firebase</div>
+<div class="skill-box">Monetization</div>
+<div class="skill-box">Multiplayer</div>
+<div class="skill-box">Optimization</div>
+<div class="skill-box">Blender</div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
 <section class="project">
 <h2 class="section-title">My Projects</h2>
 
@@ -227,13 +269,6 @@ body::before{
 <div class="project-text">
 <h3>PUNZLE: Guess the Word!</h3>
 <p>A brain-teasing puzzle game built with Unity featuring dynamic content and daily challenges.</p>
-
-<div class="skill"><span>Unity & C# <b>90%</b></span>
-<div class="skill-bar"><div style="width:90%"></div></div></div>
-
-<div class="skill"><span>Game Design <b>85%</b></span>
-<div class="skill-bar"><div style="width:85%"></div></div></div>
-
 <a class="btn" href="#">Play on Google Play</a>
 </div>
 </div>
@@ -242,7 +277,7 @@ body::before{
 <img src="project2.jpg">
 <div class="project-text">
 <h3>Mini Car Raceway — Endless Drive</h3>
-<p>An endless arcade racing game featuring multiple game modes and scalable environments.</p>
+<p>An endless arcade racing game featuring scalable systems and smooth performance.</p>
 <a class="btn" href="#">Play on Google Play</a>
 </div>
 </div>
@@ -262,7 +297,6 @@ body::before{
 <section class="contact">
 <h2 class="section-title">Get In Touch</h2>
 <div class="contact-container">
-
 <div class="contact-left">
 <p>Let's create something amazing together!</p>
 <p>📧 sarmadrasheed@gmail.com</p>
@@ -275,7 +309,6 @@ body::before{
 <textarea rows="5" placeholder="Your Message"></textarea>
 <button class="btn">Send Message</button>
 </div>
-
 </div>
 </section>
 

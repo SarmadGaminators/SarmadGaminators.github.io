@@ -5,92 +5,130 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarmad Rasheed | Game Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0f1c;
+    color: #e6edf3;
+}
+
+/* Custom Gaming Theme Colors */
+:root {
+    --primary: #00e5ff;
+    --accent: #7c4dff;
+    --card-bg: #111827;
 }
 
 .container {
-    width: 85%;
-    max-width: 1100px;
-    margin: auto;
+    width:90%;
+    max-width:1100px;
+    margin:auto;
 }
 
 header {
-    padding: 100px 0;
-    text-align: center;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background: linear-gradient(135deg, #0a0f1c, #1a1f36);
 }
 
 header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #38bdf8;
+    font-size:3.2rem;
+    color:var(--primary);
 }
 
 header h2 {
-    font-weight: 400;
-    margin-top: 10px;
-    color: #94a3b8;
+    margin-top:15px;
+    font-weight:400;
+    color:#b0bec5;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 28px;
+    background:var(--accent);
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:var(--primary);
+    transform:scale(1.05);
 }
 
 section {
-    padding: 80px 0;
+    padding:80px 0;
 }
 
 h3 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #38bdf8;
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.2rem;
+    color:var(--primary);
 }
 
-.about {
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
-}
-
-.skills-grid, .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+.card-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
 }
 
 .card {
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s ease;
+    background:var(--card-bg);
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    background: #334155;
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,229,255,0.2);
 }
 
-.project-title {
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #f8fafc;
+.card img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content {
+    padding:20px;
 }
 
 footer {
-    text-align: center;
-    padding: 40px 0;
-    background: #0f172a;
-    color: #64748b;
+    text-align:center;
+    padding:40px 0;
+    background:#05070f;
+    color:#777;
+}
+
+/* Fade Animation */
+.fade {
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.8s ease;
+}
+
+.fade.show {
+    opacity:1;
+    transform:translateY(0);
 }
 </style>
 </head>
@@ -98,66 +136,39 @@ footer {
 <body>
 
 <header>
-<div class="container">
-<h1>Sarmad Rasheed</h1>
-<h2>Game Developer & Mobile Game Publisher</h2>
-</div>
+    <h1>Sarmad Rasheed</h1>
+    <h2>Game Developer & Mobile Game Publisher</h2>
+    <a href="resume.pdf" download class="btn">Download Resume</a>
 </header>
 
-<section>
-<div class="container">
-<h3>About Me</h3>
-<div class="about">
-<p>
-I am a mobile game developer specializing in hyper-casual and simulation games.
-I focus on scalable monetization, ROAS-driven growth, and advanced data analytics using BigQuery and Google Ads integrations.
-</p>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h3>Skills</h3>
-<div class="skills-grid">
-
-<div class="card">
-<h4>🎮 Game Development</h4>
-<p>Unity (C#), Game Mechanics, UI/UX Systems, Ad Integration</p>
-</div>
-
-<div class="card">
-<h4>📊 Monetization</h4>
-<p>AdMob, MAX, Waterfall & Bidding Optimization, ROAS Scaling</p>
-</div>
-
-<div class="card">
-<h4>☁️ Cloud & Analytics</h4>
-<p>BigQuery, GAQL Automation, Firebase, Cloud Run</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section>
+<section class="fade">
 <div class="container">
 <h3>Featured Projects</h3>
-<div class="projects-grid">
+
+<div class="card-grid">
 
 <div class="card">
-<div class="project-title">Scan or Scam Simulator</div>
-<p>Decision-based psychological simulation game with optimized monetization loops.</p>
+<img src="project1.jpg" alt="Project 1">
+<div class="card-content">
+<h4>Scan or Scam Simulator</h4>
+<p>Decision-based simulation game with optimized monetization system.</p>
+</div>
 </div>
 
 <div class="card">
-<div class="project-title">I Am Taxi Driver VR</div>
-<p>First-person driving simulator with advanced ad optimization structure.</p>
+<img src="project2.jpg" alt="Project 2">
+<div class="card-content">
+<h4>I Am Taxi Driver VR</h4>
+<p>Immersive driving simulator with ad-optimized revenue loop.</p>
+</div>
 </div>
 
 <div class="card">
-<div class="project-title">Kickout</div>
-<p>Multiplayer-style action game inspired by rounded Roblox mechanics.</p>
+<img src="project3.jpg" alt="Project 3">
+<div class="card-content">
+<h4>Kickout</h4>
+<p>Fast-paced action game inspired by rounded Roblox mechanics.</p>
+</div>
 </div>
 
 </div>
@@ -165,8 +176,21 @@ I focus on scalable monetization, ROAS-driven growth, and advanced data analytic
 </section>
 
 <footer>
-<p>© 2026 Sarmad Rasheed | Built with GitHub Pages</p>
+© 2026 Sarmad Rasheed | Built with GitHub Pages
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(fade => {
+        const rect = fade.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            fade.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>

@@ -5,202 +5,193 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarmad Rasheed | Game Developer</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 body{
-  font-family:'Poppins',sans-serif;
-  background:#0a0f1c;
-  color:#e6edf3;
+    font-family:'Poppins',sans-serif;
+    background:#0b0f1f;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* ================= HERO ================= */
+/* Background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle at 20% 20%, #1b1f3f, transparent 40%),
+               radial-gradient(circle at 80% 80%, #0f3057, transparent 40%);
+    z-index:-1;
+}
+
+/* Section Titles */
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:#ff2f8b;
+}
+
+/* HERO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  background:linear-gradient(135deg,#0f1021,#1b1d40,#09203f);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px 10%;
 }
-.hero-container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:60px;
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    max-width:1200px;
 }
-.hero-left{flex:1;}
+.hero-left{
+    flex:1;
+}
 .badge{
-  display:inline-block;
-  background:#00ffd5;
-  color:#000;
-  padding:8px 18px;
-  border-radius:20px;
-  font-weight:600;
-  margin-bottom:20px;
+    background:#19e7c6;
+    color:#000;
+    padding:8px 20px;
+    border-radius:20px;
+    font-weight:600;
 }
-.glow-name{
-  font-size:3.5rem;
-  color:#ff00cc;
-  text-shadow:0 0 10px #ff00cc,
-              0 0 20px #ff00cc,
-              0 0 40px #ff00cc;
+.hero-left h1{
+    font-size:3.5rem;
+    margin:20px 0;
+    color:#ff2f8b;
+    text-shadow:0 0 20px #ff2f8b;
 }
-.role{
-  font-size:1.5rem;
-  color:#ff4081;
-  margin:15px 0 25px 0;
+.hero-left h2{
+    color:#19e7c6;
+    margin-bottom:20px;
 }
-.contact p{
-  margin:6px 0;
-  color:#cbd5e1;
+.hero-left p{
+    margin:8px 0;
+    color:#ccc;
 }
 .hero-right{
-  flex:1;
-  display:flex;
-  justify-content:center;
+    flex:1;
+    display:flex;
+    justify-content:center;
 }
-.image-wrapper{
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  padding:8px;
-  background:linear-gradient(45deg,#00ffd5,#ff00cc);
-  box-shadow:0 0 40px rgba(255,0,204,0.6);
+.profile-img{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    padding:6px;
+    background:linear-gradient(45deg,#ff2f8b,#19e7c6);
 }
-.image-wrapper img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
+.profile-img img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* PROJECT SECTION */
+.project{
+    padding:100px 10%;
+}
+.project-container{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    margin-bottom:80px;
+}
+.project-container img{
+    width:400px;
+    border-radius:15px;
+}
+.project-text{
+    flex:1;
+}
+.project-text h3{
+    font-size:1.8rem;
+    margin-bottom:20px;
+}
+.project-text p{
+    color:#bbb;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 .btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:12px 28px;
-  background:#7c4dff;
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.btn:hover{
-  background:#00ffd5;
-  color:#000;
+    padding:12px 25px;
+    background:linear-gradient(45deg,#7c4dff,#ff6a00);
+    border:none;
+    border-radius:25px;
+    color:#fff;
+    cursor:pointer;
+    text-decoration:none;
 }
 
-/* ================= ABOUT ================= */
-.about-section{
-  padding:100px 0;
-  background:linear-gradient(135deg,#0b1220,#141a2e);
+/* SKILL BARS */
+.skill{
+    margin:15px 0;
 }
-.about-container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-}
-.section-title{
-  font-size:2.5rem;
-  margin-bottom:30px;
-  color:#00e5ff;
-}
-.about-left p{
-  margin-bottom:20px;
-  line-height:1.7;
-  color:#cbd5e1;
-}
-
-/* SKILLS */
-.skill{margin-bottom:25px;}
 .skill span{
-  display:block;
-  margin-bottom:8px;
-  font-weight:600;
+    display:flex;
+    justify-content:space-between;
 }
 .skill-bar{
-  height:8px;
-  background:#1e293b;
-  border-radius:20px;
-  overflow:hidden;
+    height:8px;
+    background:#222;
+    border-radius:10px;
+    margin-top:5px;
+    overflow:hidden;
 }
 .skill-bar div{
-  height:100%;
-  background:linear-gradient(90deg,#00e5ff,#7c4dff);
-  border-radius:20px;
-  transition:1s ease;
+    height:100%;
+    background:linear-gradient(90deg,#19e7c6,#ff2f8b);
 }
 
-/* ================= PROJECTS ================= */
-section{padding:80px 0;}
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:auto;
+/* CONTACT */
+.contact{
+    padding:100px 10%;
 }
-h3{
-  text-align:center;
-  margin-bottom:40px;
-  font-size:2.2rem;
-  color:#00e5ff;
-}
-.card-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-}
-.card{
-  background:#111827;
-  border-radius:15px;
-  overflow:hidden;
-  transition:0.4s;
-}
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 30px rgba(0,229,255,0.2);
-}
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-.card-content{padding:20px;}
-
-/* ================= ANIMATION ================= */
-.fade{
-  opacity:0;
-  transform:translateY(30px);
-  transition:0.8s ease;
-}
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:40px 0;
-  background:#05070f;
-  color:#777;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-  .hero-container{
-    flex-direction:column;
-    text-align:center;
-  }
-  .about-container{
-    grid-template-columns:1fr;
+.contact-container{
+    display:flex;
     gap:50px;
-  }
+}
+.contact-left{
+    flex:1;
+}
+.contact-left p{
+    margin:15px 0;
+}
+.contact-right{
+    flex:1;
+    background:#1a1a2e;
+    padding:40px;
+    border-radius:15px;
+}
+.contact-right input,
+.contact-right textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+.contact-right button{
+    margin-top:15px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .hero-content,
+    .project-container,
+    .contact-container{
+        flex-direction:column;
+        text-align:center;
+    }
+    .project-container img{
+        width:100%;
+    }
 }
 </style>
 </head>
@@ -208,100 +199,85 @@ footer{
 <body>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="hero-container">
-    <div class="hero-left">
-      <span class="badge">Hello I'm</span>
-      <h1 class="glow-name">Sarmad Rasheed</h1>
-      <h2 class="role">Game Developer</h2>
-      <div class="contact">
-        <p>📧 your.email@gmail.com</p>
-        <p>📱 +92 3XX XXXXXXX</p>
-        <p>📍 Pakistan</p>
-      </div>
-      <a href="resume.pdf" download class="btn">Download My CV</a>
-    </div>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-left">
+<span class="badge">Hello I'm</span>
+<h1>Sarmad Rasheed</h1>
+<h2>Game Developer</h2>
+<p>📧 sarmadrasheed@gmail.com</p>
+<p>📱 +92 3XX XXXXXXX</p>
+<p>📍 Pakistan</p>
+</div>
 
-    <div class="hero-right">
-      <div class="image-wrapper">
-        <img src="profile.jpg" alt="Sarmad">
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ABOUT -->
-<section class="about-section fade">
-  <div class="about-container">
-
-    <div class="about-left">
-      <h3 class="section-title">About Me</h3>
-      <p>I’m a passionate Unity game developer focused on creating immersive mobile experiences.</p>
-      <p>I specialize in scalable monetization systems, performance optimization, and clean gameplay architecture.</p>
-      <p>My goal is to build polished, engaging, and high-retention games that players love.</p>
-    </div>
-
-    <div class="about-right">
-      <div class="skill"><span>Unity & C#</span><div class="skill-bar"><div style="width:90%"></div></div></div>
-      <div class="skill"><span>Game Design</span><div class="skill-bar"><div style="width:85%"></div></div></div>
-      <div class="skill"><span>Monetization & Ads</span><div class="skill-bar"><div style="width:80%"></div></div></div>
-      <div class="skill"><span>Firebase & Backend</span><div class="skill-bar"><div style="width:75%"></div></div></div>
-      <div class="skill"><span>Optimization & Profiling</span><div class="skill-bar"><div style="width:85%"></div></div></div>
-    </div>
-
-  </div>
+<div class="hero-right">
+<div class="profile-img">
+<img src="profile.jpg">
+</div>
+</div>
+</div>
 </section>
 
-<!-- PROJECTS -->
-<section class="fade">
-  <div class="container">
-    <h3>Featured Projects</h3>
+<!-- PROJECT 1 -->
+<section class="project">
+<h2 class="section-title">My Projects</h2>
 
-    <div class="card-grid">
+<div class="project-container">
+<img src="project1.jpg">
+<div class="project-text">
+<h3>PUNZLE: Guess the Word!</h3>
+<p>A brain-teasing puzzle game built with Unity featuring dynamic content and daily challenges.</p>
 
-      <div class="card">
-        <img src="project1.jpg">
-        <div class="card-content">
-          <h4>Scan or Scam Simulator</h4>
-          <p>Decision-based simulation game with optimized monetization systems.</p>
-        </div>
-      </div>
+<div class="skill"><span>Unity & C# <b>90%</b></span>
+<div class="skill-bar"><div style="width:90%"></div></div></div>
 
-      <div class="card">
-        <img src="project2.jpg">
-        <div class="card-content">
-          <h4>I Am Taxi Driver VR</h4>
-          <p>Immersive driving simulator with advanced ad revenue optimization.</p>
-        </div>
-      </div>
+<div class="skill"><span>Game Design <b>85%</b></span>
+<div class="skill-bar"><div style="width:85%"></div></div></div>
 
-      <div class="card">
-        <img src="project3.jpg">
-        <div class="card-content">
-          <h4>Kickout</h4>
-          <p>Fast-paced multiplayer-style action game inspired by Roblox mechanics.</p>
-        </div>
-      </div>
+<a class="btn" href="#">Play on Google Play</a>
+</div>
+</div>
 
-    </div>
-  </div>
+<div class="project-container">
+<img src="project2.jpg">
+<div class="project-text">
+<h3>Mini Car Raceway — Endless Drive</h3>
+<p>An endless arcade racing game featuring multiple game modes and scalable environments.</p>
+<a class="btn" href="#">Play on Google Play</a>
+</div>
+</div>
+
+<div class="project-container">
+<img src="project3.jpg">
+<div class="project-text">
+<h3>Ball Blaster</h3>
+<p>A hyper-casual arcade game built for smooth one-touch gameplay.</p>
+<a class="btn" href="#">Watch Video</a>
+</div>
+</div>
+
 </section>
 
-<footer>
-© 2026 Sarmad Rasheed | Built with GitHub Pages
-</footer>
+<!-- CONTACT -->
+<section class="contact">
+<h2 class="section-title">Get In Touch</h2>
+<div class="contact-container">
 
-<script>
-const faders=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-  faders.forEach(fade=>{
-    const rect=fade.getBoundingClientRect();
-    if(rect.top<window.innerHeight-100){
-      fade.classList.add('show');
-    }
-  });
-});
-</script>
+<div class="contact-left">
+<p>Let's create something amazing together!</p>
+<p>📧 sarmadrasheed@gmail.com</p>
+<p>🔗 linkedin.com/in/sarmad</p>
+</div>
+
+<div class="contact-right">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</div>
+
+</div>
+</section>
 
 </body>
 </html>
